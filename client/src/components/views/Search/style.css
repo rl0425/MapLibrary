@@ -1,0 +1,374 @@
+button{
+    font-family: 'Akaya Telivigala', cursive;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px; 
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid skyblue;
+    background-color: rgba(0,0,0,0);
+    color: skyblue;
+    padding: 5px;
+    font-family: 'Akaya Telivigala', cursive;
+}
+input{
+    border: 1px solid rgb(135, 135, 235);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+input:focus {
+    outline:none;
+}
+label{
+
+    font-family: 'Akaya Telivigala', cursive;
+    color:skyblue;
+    font-size:20px;
+}
+button:hover{
+    font-family: 'Akaya Telivigala', cursive;
+    color:white; background-color: skyblue;   
+}
+button:focus {
+
+    font-family: 'Akaya Telivigala', cursive;
+    outline:none;
+}
+
+#Bigbox2{
+    
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    min-height: 70vh;
+    max-height: 100vh;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    text-align: center;
+}
+
+#root{
+  height: 100%;
+}
+
+#exa{
+  position:absolute;
+  background-color: red;
+  color:black;
+}
+
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+body {
+  margin:0;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  letter-spacing: 2px;
+  font-size:48px;
+}
+p {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+  font-size:14px;
+  color: #333333;
+}
+
+.header {
+  position:relative;
+  text-align:center;
+  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+ 
+}
+.logo {
+  width:50px;
+  fill:white;
+  padding-right:15px;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.inner-header {
+  height:65vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.waves2 {
+  position:relative;
+  width: 100%;
+  /*height:95vh;*/
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:300px;
+}
+
+.content {
+  position:relative;
+  height:20vh;
+  text-align:center;
+  background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:60vh;
+  }
+  h1 {
+    font-size:24px;
+  }
+}
+
+
+.map_wrap,
+.map_wrap * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Malgun Gothic',
+        dotum,
+        '돋움',
+        sans-serif;
+    font-size: 12 px;
+}
+
+.map_wrap a,
+.map_wrap a:hover,
+.map_wrap a:active {
+    color: #000,
+    
+}
+
+.map_wrap {
+  display:flex;
+    position: relative;
+
+    height: 500px;
+}
+
+#menu_wrap {
+
+    
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250 px;
+    margin: 10 px 0 30 px 10 px;
+    padding: 5 px;
+    
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+    font-size: 12 px;
+    border-radius: 10 px;
+}
+
+
+
+#menu_wrap hr {
+    display: space-between;
+    height: 1 px;
+    border: 0;
+    border-top: 2 px solid #5F5F5F;
+    margin: 3px 0;
+}
+
+
+#menu_wrap.option {
+    text-align: center;
+}
+
+#menu_wrap.option p {
+    margin: 10 px 0;
+}
+
+#menu_wrap.option button {
+    margin-left: 5 px;
+}
+#placesList{
+  overflow-y: auto;
+  left:50em;
+  margin-left: 10em;
+  background-color: white;
+  border: 1px solid rgba(0,172,193,1);
+  box-shadow: 3px 3px 3px 3px;
+
+}
+
+#placesList li::before{
+  content:"> ";
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#placesList li {
+  border: 1px solid black;
+  text-align: left;
+  list-style: none;
+ 
+    
+}
+
+#placesList.item {
+    position: relative;
+    border-bottom: 1 px solid #888;
+    overflow: hidden;
+    cursor: pointer;
+    min-height: 65px;
+}
+
+#placesList.item span {
+    display: block;
+    margin-top: 4 px;
+}
+
+#placesList.item h5,
+#placesList.item.info {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#placesList.item.info {
+    padding: 10 px 0 10 px 55 px;
+}
+
+#placesList.info.gray {
+    color: #8a8a8a;
+}
+
+#placesList.info.jibun {
+    padding-left: 26 px;
+    background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;
+}
+
+#placesList.info.tel {
+    color: #009900;
+}
+
+#placesList.item.markerbg {
+    float: left;
+    position: absolute;
+    width: 36 px;
+    height: 37 px;
+    margin: 10 px 0 0 10 px;
+    background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;
+}
+
+#placesList.item.marker_1 {
+    background-position: 0-10 px;
+}
+
+#placesList.item.marker_2 {
+    background-position: 0-56 px;
+}
+
+#placesList.item.marker_3 {
+    background-position: 0-102 px
+}
+
+#placesList.item.marker_4 {
+    background-position: 0-148 px;
+}
+
+#placesList.item.marker_5 {
+    background-position: 0-194 px;
+}
+
+#placesList.item.marker_6 {
+    background-position: 0-240 px;
+}
+
+#placesList.item.marker_7 {
+    background-position: 0-286 px;
+}
+
+#placesList.item.marker_8 {
+    background-position: 0-332 px;
+}
+
+#placesList.item.marker_9 {
+    background-position: 0-378 px;
+}
+
+#placesList.item.marker_10 {
+    background-position: 0-423 px;
+}
+
+#placesList.item.marker_11 {
+    background-position: 0-470 px;
+}
+
+#placesList.item.marker_12 {
+    background-position: 0-516 px;
+}
+
+#placesList.item.marker_13 {
+    background-position: 0-562 px;
+}
+
+#placesList.item.marker_14 {
+    background-position: 0-608 px;
+}
+
+#placesList.item.marker_15 {
+    background-position: 0-654 px;
+}
+
+#pagination {
+    margin: 10 px auto;
+    text-align: center;
+}
+
+#pagination a {
+    display: inline-block;
+    margin-right: 10 px;
+}
+
+#pagination.on {
+    font-weight: bold;
+    cursor: default;
+    color: #777;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////////*/
