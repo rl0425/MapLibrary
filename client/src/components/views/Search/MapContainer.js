@@ -39,21 +39,16 @@ const MapContainer = ({searchPlace}) => {
 
             const container = document.getElementById('myMap'); // 내가 고쳐쓸 수 있는 곳
             const options = { center: new kakao.maps.LatLng(latitude, longitude), level: 4 };
-           // console.log(latitude,longitude); 
             const map = new kakao.maps.Map(container, options); // 키워드로 검색하기
             const ps = new kakao.maps.services.Places();
             ps.keywordSearch(searchPlace, placesSearchCB); //searchPlace는 props값. 내가 수정할 수 있는 곳 
-            // 아래코드 그대로 사용해야함 
-            //////////////////////////////////
+            
             
             function placesSearchCB(data, status, pagination) {
                 if (status === kakao.maps.services.Status.OK) {
             
-                    // 정상적으로 검색이 완료됐으면
-                    // 검색 목록과 마커를 표출합니다
                     displayPlaces(data);
             
-                    // 페이지 번호를 표출합니다
                     displayPagination(pagination);
             
                 } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
@@ -67,7 +62,7 @@ const MapContainer = ({searchPlace}) => {
                     return;
             
                 }
-            } // 아래코드는 그대로 사용해야함
+            } 
             function displayPlaces(places) {
 
                 var listEl = document.getElementById('placesList'), 
@@ -76,15 +71,15 @@ const MapContainer = ({searchPlace}) => {
                 bounds = new kakao.maps.LatLngBounds(), 
                 listStr = '';
                 
-                // 검색 결과 목록에 추가된 항목들을 제거합니다
+             
                 removeAllChildNods(listEl);
             
-                // 지도에 표시되고 있는 마커를 제거합니다
+     
                 removeMarker();
                 
                 for ( var i=0; i<places.length; i++ ) {
             
-                    // 마커를 생성하고 지도에 표시합니다
+              
                     var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
                         marker = addMarker(placePosition, i), 
                         itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
@@ -93,10 +88,7 @@ const MapContainer = ({searchPlace}) => {
                     // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
                     // LatLngBounds 객체에 좌표를 추가합니다
                     bounds.extend(placePosition);
-            
-                    // 마커와 검색결과 항목에 mouseover 했을때
-                    // 해당 장소에 인포윈도우에 장소명을 표시합니다
-                    // mouseout 했을 때는 인포윈도우를 닫습니다
+ 
                     (function(marker, title) {
                         kakao.maps.event.addListener(marker, 'mouseover', function() {
                             displayInfowindow(marker, title);
@@ -126,15 +118,7 @@ const MapContainer = ({searchPlace}) => {
                 // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
                 map.setBounds(bounds);
             }
-
-
-
-            
-           
-            function button1_click(element){
-                //console.log('no error');
-            }
-
+    
             // 검색결과 항목을 Element로 반환하는 함수입니다
             function getListItem(index, places) {
 
@@ -154,31 +138,13 @@ const MapContainer = ({searchPlace}) => {
                              
                   itemStr += '  <span class="tel">' + places.phone  + '</span>' + '</div>' +
                          '<a href=' + places.place_url + ' target="_blank" > 해당 사이트 방문하기 </a>';
-                         //<a href={"https://google.com"}>LinkedIn handle</a>
-                //itemStr += '<button onClick={' + 'button1_click' + '} >버튼1</button>'
-                //insertItem(itemStr);
-                //itemStr +=  '<Favorite placesInfo=' + places + ' userFrom={' + localStorage.getItem('userId') + '}/>'
-            
-                //<div id='exa'>
-                //<Favorite/>
-          
-                //  </div>*/}
-                //<Favorite placesInfo={places} userFrom={localStorage.getItem('userId')} />
-                //Favorite(places);
 
-               // el = insertItem(itemStr);
-                
                 el.innerHTML = itemStr;
                 
                
                 
                 el.className = 'item';
-               // console.log(places);
-                
-                //const urlname = places.place_url;
-                //let ele = document.getElementById(el.div.h5);
-               // var ele = document.getElementById('h5');
-               // el.div.h5.setAttribute("href",urlname);
+
 
                 el.setAttribute("onClick", <Favorite/>);
                 //el.setAttribute("onClick", {newPage(urlname)});
