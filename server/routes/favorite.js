@@ -5,10 +5,6 @@ const router = express.Router();
 const { Favorite } = require("../models/favorite");
 const { auth } = require("../middleware/auth");
 
-//=================================
-//             Subscribe
-//=================================
-
 
 router.post("/favoriteNumber", (req, res) => {
 
@@ -20,8 +16,6 @@ router.post("/favoriteNumber", (req, res) => {
         })
 
 });
-
-
 
 router.post("/favorited", (req, res) => {
 
@@ -67,8 +61,6 @@ router.post("/removeFromFavorite", (req, res) => {
 
 
 router.post("/getFavoredMovie", (req, res) => {
-
-    //Need to find all of the Users that I am subscribing to From Subscriber Collection 
     Favorite.find({ 'userFrom': req.body.userFrom })
         .exec((err, favorites) => {
             if (err) return res.status(400).send(err);
