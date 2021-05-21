@@ -29,30 +29,6 @@ let Client_id = 'gmm1qrjlur';
 let client_id = 'gmm1qrjlur';
 let client_secret = 'oS6wvEtaPKSJ9D4hHNK0gALmuQrnr6vcSzFdLAU3';
 
-
-
-//app.get('/search/blog', function (req, res) {
- /*   let api_url = 'https://openapi.naver.com/v1/search/blog?query=' + encodeURI(req.query.query); // json 결과
- //   let api_url = 'https://openapi.naver.com/v1/search/blog.xml?query=' + encodeURI(req.query.query); // xml 결과
-    let request = require('request');
-    let options = {
-        url: api_url,
-        headers: {'X-Naver-Client-Id':Search_clientid, 'X-Naver-Client-Secret': Search_clientSecret}
-     };
-    request.get(options, function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        res.writeHead(200, {'Content-Type': 'text/json;charset=utf-8'});
-        res.end(body);
-      } else {
-        res.status(response.statusCode).end();
-        console.log('error = ' + response.statusCode);
-      }
-    });
-  });
-  app.listen(3000, function () {
-    console.log('http://127.0.0.1:3000/search/blog?query=검색어 app listening on port 3000!');
-  });
-*/
 function LandingPage(props) {
 
     useEffect(() => {
